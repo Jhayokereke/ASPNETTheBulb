@@ -1,0 +1,28 @@
+﻿@page
+@model MVCDemo.Pages.Register2Model
+@{
+    ViewData["Title"] = "Register2";
+}
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new class</h4>
+    <h6 class="text-danger">Page model</h6>
+    <div class="form-group">
+        <label asp-for="ClassViewModel.Name">Name</label>
+        <div class="col-md-6">
+            <input asp-for="ClassViewModel.Name" class="form-control">
+            <span asp-validation-for="ClassViewModel.Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ClassViewModel.Capacity">Capacity</label>
+        <div class="col-md-6">
+            <input asp-for="ClassViewModel.Capacity" class="form-control">
+            <span asp-validation-for="ClassViewModel.Capacity" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+}
+

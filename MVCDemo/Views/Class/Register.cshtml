@@ -1,0 +1,25 @@
+﻿@model ClassViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+@using (Html.BeginForm("Register", "Class", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new class</h4>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <div class="col-md-6">
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Capacity">Capacity</label>
+        <div class="col-md-6">
+            <input asp-for="Capacity" class="form-control">
+            <span asp-validation-for="Capacity" class="text-danger" ></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+}

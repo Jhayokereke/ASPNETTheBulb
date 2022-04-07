@@ -1,0 +1,30 @@
+﻿@model ClassViewModel
+@{
+    ViewData["Title"] = "Dotnet Class";
+}
+<div>
+    <h2>This is the data for @Model.Name</h2>
+    <h5 class="text-danger">Class capacity is @Model.Capacity</h5>
+    <img class="card-img-top img-thumbnail" src="~/light-bulb.png" alt="Bulb" />
+    <table class="table table-bordered">
+        @if (Model.BestStudents != null)
+        {
+            <tr>
+                <th>Category</th>
+                <th>First</th>
+                <th>Second</th>
+                <th>Third</th>
+            </tr>
+
+            foreach (var item in Model.BestStudents)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value[0]</td>
+                    <td>@item.Value[1]</td>
+                    <td>@item.Value[2]</td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,8 @@
+﻿@page
+@model MVCDemo.Pages.WelcomeModel
+@{
+    ViewData["Title"] = "Welcome";
+    var name = Model.Name ?? "User";
+}
+
+<h4>Welcome @name</h4>

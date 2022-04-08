@@ -36,7 +36,7 @@ namespace MVCDemo.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = "Administrator")]
+        [Authorize(Policy = _adminPolicy)]
         public IActionResult Register(ClassViewModel model)
         {
             try

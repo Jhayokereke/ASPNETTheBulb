@@ -6,12 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Commons;
 
 namespace MVCDemo.Controllers
 {
     public class ClassController : Controller
     {
         private readonly ILogger<ClassController> _logger;
+        private static readonly string _adminPolicy = Constants.AdministratorPolicy;
 
         public ClassController(ILogger<ClassController> logger)
         {
@@ -34,8 +36,7 @@ namespace MVCDemo.Controllers
         }
 
         [HttpPost]
-        [Authorize]
-        //[Authorize(Policy = "Administrator")]
+        [Authorize(Policy = "Administrator")]
         public IActionResult Register(ClassViewModel model)
         {
             try

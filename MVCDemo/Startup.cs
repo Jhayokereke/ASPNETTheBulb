@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Commons;
 
 namespace MVCDemo
 {
@@ -39,9 +40,8 @@ namespace MVCDemo
             services.AddControllersWithViews();
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Administrator", 
-                    policy => policy.RequireClaim("Register class")
-                                    .RequireClaim("Delete class"));
+                options.AddPolicy(Constants.AdministratorPolicy, 
+                    policy => policy.RequireClaim("Register class"));
             });
         }
 

@@ -354,7 +354,4 @@ obj
 bin
 .dockerignore
 
-FacilityManagement.Services/FacilityManagement.Services.API/appsettings.json
-FacilityManagement.Services/FacilityManagement.Services.API/appsettings.[Dd]evelopment.json
-FacilityManagement.Services/FacilityManagement.Services.API/log.json
-FacilityManagement.Services/FacilityManagement.Services.API/log.txt
+appsettings.*.json

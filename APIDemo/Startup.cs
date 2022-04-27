@@ -66,6 +66,7 @@ namespace APIDemo
                    ClockSkew = TimeSpan.Zero
                };
             });
+            
 
             services.AddScoped<IAccountService, AccountService>();
             services.AddSingleton<IJWTManager, JWTManager>();

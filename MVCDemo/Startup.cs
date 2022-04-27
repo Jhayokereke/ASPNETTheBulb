@@ -28,7 +28,7 @@ namespace MVCDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlServer")) );
+            services.AddDbContext<AppDBContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PostGreSql")) );
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 12;

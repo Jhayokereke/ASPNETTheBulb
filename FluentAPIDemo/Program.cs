@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FluentAPIDemo
 {
@@ -7,14 +9,10 @@ namespace FluentAPIDemo
     {
         static void Main(string[] args)
         {
-            var connectionBuilder = PostGreSQLConnectionBuilder.AddDatabase("data")
-                                                                .OnHost("google")
-                                                                .OnPort(7632)
-                                                                .WithUser("Jhay")
-                                                                .AndPassword("myPassword")
-                                                                .Create();
+            APIHelper helper = new APIHelper("https://localhost:5001");
+            var result = helper.FetchData<string>("api/home", new Dictionary<string, string>{ { "Authorization", "Bearer nvvcfg" } }).Result;
 
-            Console.WriteLine(connectionBuilder.ConnectionString);
+            Console.WriteLine(result);
         }
     }
 }

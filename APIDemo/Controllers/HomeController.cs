@@ -17,7 +17,7 @@ namespace APIDemo.Controllers
         {
             var id = Guid.NewGuid().ToString();
 
-            return Ok(id);
+            return Ok(new { id });
         }
 
         [HttpPost]
